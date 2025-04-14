@@ -1,117 +1,50 @@
-# Old-Twitter-Clone
-Clone of original twitter using React Native Expo
+# Welcome to your Expo app 👋
 
---------------------------------------------------------------------------------------------------------------------------------------------------
-PROJECT SCOPE:
--
-GOAL: Make a copy of of the old Twitter before it became X using React Native Expo. Which allows us to make a old twitter copy for all platforms using only one code base.
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-UI/UX: The below link is a Figma creation with twitter UI/UX protoype that we will use as a guidline for our design. Of course the further we go we may want to add more features like dark mode for example but we can use this figma to help us visualize our goal and help us stay on track.
+## Get started
 
-https://www.figma.com/proto/qarBVRG5P0GkJxDCwv7VTi/Twitter-UI-Screens--Community-?node-id=7-257&p=f&t=qVcImwSAtJ0Bw7od-1&scaling=min-zoom&content-scaling=fixed&page-id=4%3A1224
+1. Install dependencies
 
---------------------------------------------------------------------------------------------------------------------------------------------------
-App Testing/Emulation Setup:
--
-There are going to be two options for testing/viewing the app.
+   ```bash
+   npm install
+   ```
 
-On a physical mobile device via Expo Go app
+2. Start the app
 
-This will be the easiest way to be able to see/test the app and I would recommend it if you don't want to go through the whole process of setting up a emulator on your computer 
+   ```bash
+    npx expo start
+   ```
 
-Requirements:
-Android/iOS mobile device
+In the output, you'll find options to open the app in a
 
-Setup Steps:
-Install Expo GO app from either App Store or Google Play store.
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-------------------------
-Via Android/IOS Emulator
--
-There are two option for emulators
-Android Emulator
+You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-Requirements:
-Download/update Android Studio
- Windows: https://developer.android.com/studio Mac: https://developer.android.com/studio
+## Get a fresh project
 
-Setup For Windows: 
-1. Open Android Studio Setup. Under Select components to install, select Android Studio and Android Virtual Device. Then, click Next.
-2. In the Android Studio Setup Wizard, under Install Type, select Standard and click Next.
-3. The Android Studio Setup Wizard will ask you to verify the settings, such as the version of Android SDK, platform-tools, and so on. Click Next    after you have verified.
-4. In the next window, accept licenses for all available components.5.After the tools installation is complete, configure the ANDROID_HOME           environment variable: 
-       Go to Windows Control Panel > User Accounts > User Accounts (again) > Change my environment variables and click New to create a new               ANDROID_HOME user variable.
+When you're ready, run:
 
-NOTE: To find out your installed SDK location:
-     To find the location of the SDK in Android Studio manually, go to Settings > Languages & Frameworks > Android SDK. See the location next to       Android SDK Location that is usually near the top of the page
+```bash
+npm run reset-project
+```
 
-5. To verify that the new environment variable is loaded, open PowerShell, and copy and paste the following command:
-   Get-ChildItem -Path Env:
-The command will return a list of user environment variables. Check for Android_Home. If its there then the variable has been loaded 
+This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-6. To add platform-tools to the Path, go to Windows Control Panel > User Accounts > User Accounts (again) > Change my environment variables >        Path > Edit > New and add the path to the platform-tools
+## Learn more
 
-NOTE: By default the platform-tools should be installed at the following location:
-      %LOCALAPPDATA%\Android\Sdk\platform-tools
-7. Verify that you can run adb from the PowerShell. To do this run the following command in powershell:
-      adb --version
-If the command returns the version number of adb then the environment path is now setup
+To learn more about developing your project with Expo, look at the following resources:
 
-8. Now open Android studio again and navigate to the main screen of Android Studio
-9. On the Android Studio main screen, click More Actions, then Virtual Device Manager in the dropdown menu
-10. Click the Create device button(which can also be a plus sign on the screen)
-11. Now choose the hardware you would like to emulate and select the OS version you would like to run on your emulated device and add any             additional setting you would like to add to your emulated device. Only required setting are the device and device OS
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
-Your Android emulation environment is now setup 
+## Join the community
 
+Join our community of developers creating universal apps.
 
-Setup For Mac: 
-
-1. Launch Android Studios and setup account
-2. On the main page click on more actions and select SDK manager
-3. Go to Settings > Languages & Frameworks > Android SDK
-4. Under SDK platforms tab choose/install latest android api version
-5. Under SDK tools tab choose/install latest Android SDK Build-Tools and Android Emulator
-6. Copy path listed in the box that says Android SDK Location towards top of page.
-7. Click Apply and OK to install the Android SDK and related build tools
-8. Open your terminal and enter the following commands:
-     export ANDROID_HOME=$HOME/Library/Android/sdk
-     export PATH=$PATH:$ANDROID_HOME/emulator
-     export PATH=$PATH:$ANDROID_HOME/platform-tools
-9. Now reload the path environment variables in your current shell:
-   If you are using ZSH:
-     source $HOME/.zshrc
-   If you are using BASH:
-     source $HOME/.bashrc
-   
-NOTE: If you are unsure which you are using run this command to know which you are using:
-    echo $SHELL
-
-10.Run the following command in your terminal:
-     adb version
-If you see an output similar to the one below your path environment has been setup correctly
-      Android Debug Bridge version 1.0.41
-      Version 35.0.2-12147458
-      Installed as /Users/isairl/Library/Android/sdk/platform-tools/adb
-      Running on Darwin 24.3.0 (arm64)
-
-NOTE: If you get no output or an error try rerunning steps 8 to 10 
-Now that the environment path is setup go back to Android Studio and navigate to the main page and choose virtual device manager option from the more actions drop down menu
-
-11. In the virtual device manager click create virtual device button(Can also be a plus sign in the top left corner)
-12. Now choose the hardware you would like to emulate and select the OS version you would like to run on your emulated device and add any             additional setting you would like to add to your emulated device. Only required setting are the device and device OS
-
-Your android emulation is now ready
-
------------------------
-IOS Emulator
--
-NOTE: A MAC device is required to run a IOS emulator 
-1. Download/update XCode from MAC App Store
-2. Add/setup account
-3. Download/add IOS platform in Xcode under settings>components>Platform
-4. Open your terminal
-5. Install watchmen on your MAC by entering the following commands in your terminal:
-     brew install watchman
-   
-Your iOS emulator environment is now setup 
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
