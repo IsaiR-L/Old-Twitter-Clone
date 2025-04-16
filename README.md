@@ -95,8 +95,9 @@ Now that the environment path is setup go back to Android Studio and navigate to
 In the virtual device manager click create virtual device button(Can also be a plus sign in the top left corner)
 Now choose the hardware you would like to emulate and select the OS version you would like to run on your emulated device and add any additional setting you would like to add to your emulated device. Only required setting are the device and device OS
 
-Your Android emulation environment is now setup
--- 
+Your android emulation is now ready
+
+-----------------------
 IOS Emulator
 
 NOTE: A MAC device is required to run a IOS emulator 
