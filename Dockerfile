@@ -1,5 +1,8 @@
 # Use a base Node image
-FROM node:23-alpine
+FROM node:20-alpine
+
+# Init tool for proper signal handling
+RUN apk add --no-cache dumb-init
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -8,16 +11,15 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --legacy-peer-deps
+RUN npm install
 
 # Copy the rest of the code
 COPY . .
 
-# Install Expo CLI globally
-RUN npm install -g expo-cli
-
 # Expose Expo's default ports
-EXPOSE 8081 19000 19001 19002 19006
+EXPOSE 8081 19000 19001 19002 
+
+ENTRYPOINT ["dumb-init", "--"]
 
 # Start the Expo dev server
-CMD ["expo", "start", "--tunnel"]
+CMD ["npx", "expo", "start", "--lan", "--clear"]

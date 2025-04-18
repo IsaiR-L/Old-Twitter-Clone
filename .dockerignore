@@ -1,3 +1,5 @@
 node_modules
 .expo
+.metro-cache
+.env
 npm-debug.log
