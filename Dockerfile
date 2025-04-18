@@ -22,4 +22,5 @@ EXPOSE 8081 19000 19001 19002
 ENTRYPOINT ["dumb-init", "--"]
 
 # Start the Expo dev server
-CMD ["npx", "expo", "start", "--lan", "--clear"]
+#CMD ["npx", "expo", "start", "--lan", "--clear"]
+CMD ["sh"]
