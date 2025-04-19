@@ -2,8 +2,8 @@ version: '3.9'
 
 services:
   expo:
-    build: .
-    container_name: expo-dev
+    image: isairl/og-twitter
+    container_name: og-twitter-dev
     ports:
       - "8081:8081"     # Metro bundler
       - "19000:19000"   # Expo dev server
