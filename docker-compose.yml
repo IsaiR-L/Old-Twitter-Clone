@@ -1,8 +1,8 @@
-version: '3.9'
-
 services:
   expo:
-    image: isairl/og-twitter
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: og-twitter-dev
     ports:
       - "8081:8081"     # Metro bundler

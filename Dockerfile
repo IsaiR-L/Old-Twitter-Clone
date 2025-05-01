@@ -4,6 +4,9 @@ FROM node:20-alpine
 # Init tool for proper signal handling
 RUN apk add --no-cache dumb-init
 
+# Install Git
+RUN apk add --no-cache git
+
 # Set the working directory inside the container
 WORKDIR /app
 
