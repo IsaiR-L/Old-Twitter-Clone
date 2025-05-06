@@ -36,12 +36,14 @@ export default function login() {
                 source={require('/app/assets/images/log-twitter-bird.png')}
                 style={styles.logo}
                 />
-                <TextInput style={styles.textinput} placeholder="Username" value={email} onChangeText={setEmail} />
+                <TextInput style={styles.textinput} placeholder="Email" value={email} onChangeText={setEmail} />
                 <TextInput style={styles.textinput} placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
                 <Pressable style={styles.Button} onPress={ () => { handleLogin(); }}>
                     <Text style={styles.text}> Login </Text>
                 </Pressable>
-                <Text> Don't have a account? <Link href={"/signup"} style={styles.link}>Sign up</Link></Text> 
+                <Text>
+                    Don't have a account? 
+                    <Link href={"/signup"} style={styles.link}>Sign Up</Link></Text> 
           </View> 
         </View>
     )
