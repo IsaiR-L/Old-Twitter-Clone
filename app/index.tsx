@@ -43,7 +43,7 @@ export default function login() {
                 </Pressable>
                 <Text>
                     Don't have a account? 
-                    <Link href={"/signup"} style={styles.link}>Sign Up</Link></Text> 
+                    <Link href={"/signup"} style={styles.link}> Sign Up</Link></Text> 
           </View> 
         </View>
     )
