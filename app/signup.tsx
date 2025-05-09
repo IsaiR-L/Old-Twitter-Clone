@@ -1,5 +1,5 @@
 import { Text, View, TextInput, Image, Pressable, Alert } from "react-native";
-import { styles } from "/app/styles/login.styles"; // Use the same styles as your login page
+import { styles } from "/app/styles/login_styles.ts"; // Use the same styles as your login page
 import React, { useState } from "react";
 import { Link, useRouter } from "expo-router";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
