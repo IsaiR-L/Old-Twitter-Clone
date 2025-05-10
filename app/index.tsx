@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { login_user } from '/app/authService';
 import { FirestoreError } from "firebase/firestore";
 
-export default function login() {
+export default function Index() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
