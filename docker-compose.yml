@@ -1,6 +1,6 @@
 services:
   expo:
-    image: isairl/og-twitter:v7
+    image: isairl/og-twitter:v8
     container_name: og-twitter-dev
     ports:
       - "8081:8081"     # Metro bundler
