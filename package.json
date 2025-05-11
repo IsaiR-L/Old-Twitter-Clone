@@ -34,8 +34,8 @@
     "expo-system-ui": "~5.0.7",
     "expo-web-browser": "~14.1.6",
     "firebase": "^10.5.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-native": "^0.79.0",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-reanimated": "~3.17.4",
@@ -54,6 +54,12 @@
     "jest-expo": "~52.0.6",
     "react-test-renderer": "^19.1.0",
     "typescript": "^5.8.3"
+  },
+  "overrides": {
+    "jest-expo": {
+      "react": "19.1.0",
+      "react-test-renderer": "19.1.0"
+    }
   },
   "private": true
 }
