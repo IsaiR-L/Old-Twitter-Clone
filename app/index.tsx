@@ -1,5 +1,5 @@
 import { Text, View, TextInput, Image, Pressable } from "react-native";
-import { styles } from "/app/styles/login_styles.ts";
+import { styles } from "/app/styles/login_styles";
 import { Link, useRouter } from "expo-router";
 import React, { useState } from "react";
 import { login_user } from '/app/authService';
