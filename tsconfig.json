@@ -1,6 +1,11 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "moduleResolution": "node16", // Ensure this matches the module system
+    "module": "Node16", // Set module to Node16 to match moduleResolution
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "strict": true,
     "paths": {
       "@/*": [
