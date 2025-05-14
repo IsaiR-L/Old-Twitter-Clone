@@ -41,7 +41,7 @@ export default function Index() {
                 <Pressable style={styles.Button} onPress={ () => { handleLogin(); }}>
                     <Text style={styles.text}> Login </Text>
                 </Pressable>
-                <Text> Don't have a account? <Link href={"/signup"} style={styles.link}>Sign up</Link></Text> 
+                <Text> Don't have a account? <Link href={"/signup"} style={styles.link} onPress={() => { goToSignUp }}>Sign up</Link></Text> 
           </View> 
         </View>
     )

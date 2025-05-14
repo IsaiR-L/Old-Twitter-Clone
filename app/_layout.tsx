@@ -39,8 +39,8 @@ export default function RootLayout() {
     <SafeAreaView style={{ flex: 1}}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false}}/>
-        <Stack.Screen name="signup"/>
-        <Stack.Screen name="(Auths)/timeline" options={{ headerShown: false}}/>
+        <Stack.Screen name="signup" options={{ headerShown: false}}/>
+        <Stack.Screen name="(Auths)" options={{ headerShown: false}}/>
       </Stack>
     </SafeAreaView>
   </SafeAreaProvider>

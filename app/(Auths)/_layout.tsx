@@ -1,6 +1,15 @@
 import React from "react";
-import { Stack } from "expo-router";
+import { Stack, useSegments, useRouter } from "expo-router";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function AuthLayout() {
-  return <Stack />;
+  return(
+    <SafeAreaProvider>
+        <SafeAreaView style={{ flex: 1}}>
+          <Stack>
+            <Stack.Screen name="timeline" options={{ headerShown: false}}/>
+          </Stack>
+        </SafeAreaView>
+      </SafeAreaProvider>
+  );
 }

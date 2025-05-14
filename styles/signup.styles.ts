@@ -9,6 +9,13 @@ export const styles = StyleSheet.create({
         justifyContent: "flex-start",
         backgroundColor: "#FFFFFF",
     },
+    Titletext: {
+        fontSize: 30,
+        color: "black",
+        textAlign: "center",
+        fontWeight: "bold",
+        marginBottom: 10,
+    },
     input: {
         flex: 1,
         alignItems: "center",
@@ -31,8 +38,8 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
     },
     logo: {
-        height: 100,
-        width: 100,
+        height: 80,
+        width: 80,
         marginBottom: 10
     },
     link: {
