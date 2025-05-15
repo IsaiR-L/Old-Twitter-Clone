@@ -4,6 +4,8 @@ import { Auth, User, onAuthStateChanged} from "firebase/auth";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { auth } from "../firebase";
 
+
+
 export default function RootLayout() {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState<User | null>(null);
@@ -39,8 +41,7 @@ export default function RootLayout() {
     <SafeAreaView style={{ flex: 1}}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false}}/>
-        <Stack.Screen name="signup"/>
-        <Stack.Screen name="(Auths)/timeline" options={{ headerShown: false}}/>
+        <Stack.Screen name="signup" options = {{headerShown: false}}/>
       </Stack>
     </SafeAreaView>
   </SafeAreaProvider>

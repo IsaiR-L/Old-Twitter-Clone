@@ -2,7 +2,7 @@ import { Text, View, TextInput, Image, Pressable } from "react-native";
 import { styles } from "/app/styles/login_styles";
 import { Link, useRouter } from "expo-router";
 import React, { useState } from "react";
-import { login_user } from '/app/authService';
+import { login_user } from '/app/services/authServices';
 import { FirestoreError } from "firebase/firestore";
 
 export default function Index() {
@@ -36,8 +36,17 @@ export default function Index() {
                 source={require('/app/assets/images/log-twitter-bird.png')}
                 style={styles.logo}
                 />
-                <TextInput style={styles.textinput} placeholder="Email" value={email} onChangeText={setEmail} />
-                <TextInput style={styles.textinput} placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
+                <TextInput 
+                    style={styles.textinput} 
+                    placeholder="Email" 
+                    value={email} 
+                    onChangeText={setEmail} />
+                <TextInput 
+                    style={styles.textinput}
+                    placeholder="Password" 
+                    value={password} 
+                    onChangeText={setPassword} 
+                    secureTextEntry />
                 <Pressable style={styles.Button} onPress={ () => { handleLogin(); }}>
                     <Text style={styles.text}> Login </Text>
                 </Pressable>
