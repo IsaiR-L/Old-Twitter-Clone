@@ -8,6 +8,9 @@ export default function AuthLayout() {
         <SafeAreaView style={{ flex: 1}}>
           <Stack>
             <Stack.Screen name="timeline" options={{ headerShown: false}}/>
+            <Stack.Screen name="search" options={{ headerShown: false}}/>
+            <Stack.Screen name="notifications" options={{ headerShown: false}}/>
+            <Stack.Screen name="message" options={{ headerShown: false}}/>
           </Stack>
         </SafeAreaView>
       </SafeAreaProvider>

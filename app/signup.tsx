@@ -14,7 +14,7 @@ export default function signup() {
 
   const handleSignup = async () => {
     try {
-      await signUp(email, password);
+      await signUp(email, password, username);
         goToHome();
       } catch (error: any) {
         const err = error as FirestoreError
