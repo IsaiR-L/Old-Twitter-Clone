@@ -18,9 +18,9 @@ export const signUp = async (email: string, password: string, username: string) 
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      await setDoc(doc(db, 'users-test', user.uid), {
+      await setDoc(doc(db, 'users', user.uid), {
         uid: user.uid,
-        displayName: username,
+        username: username,
         email: email,
       });
       console.log('User signed up:', userCredential);

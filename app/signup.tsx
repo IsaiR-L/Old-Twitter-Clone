@@ -23,7 +23,7 @@ export default function signup() {
   };
 
   const goToHome = () => {
-      router.push("/");
+      router.push("/(Auths)/timeline");
   }
 
   return (

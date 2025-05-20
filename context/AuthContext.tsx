@@ -1,13 +1,14 @@
 // context/AuthContext.tsx
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged, User } from "firebase/auth";
-import { doc, onSnapshot } from "firebase/firestore";
+import { doc, updateDoc, onSnapshot } from "firebase/firestore";
 import { auth, db } from "../firebase";
 
 type UserProfile = {
   name: string;
   email: string;
   role?: string;
+  username: string;
 };
 
 type AuthContextType = {
@@ -56,7 +57,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const updateProfile = async (data: Partial<UserProfile>) => {
     if (!user) return;
     const profileRef = doc(db, "users", user.uid);
-    await profileRef.update(data); // requires Firestore security rules to allow update
+    await updateDoc(profileRef, data);
   };
 
   return (
