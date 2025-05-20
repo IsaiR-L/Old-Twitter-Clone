@@ -9,26 +9,25 @@ export default function Index() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
-
+// handleLogin CHECKS IF THE USER IS A FIRESTORE USER (FIRESTORE DATABASE)
     const handleLogin = async () => {
         try {
             await login_user(email, password);
-            //goToHome();
             } catch (error: any) {
                 const err = error as FirestoreError
 
                 alert('Login Failed: ' + err.message);
             }
     };
-
+// USER AUTHENTICATED, THEN "Login" BUTTON SHOULD ALLOW USER TO GO TO "timeline" PAGE;
     const goToHome = () => {
         router.push("/timeline");
     }
-
+// IF NOT A USER, THE APP ROUTES THE USER TO THE "signup" PAGE.
     const goToSignUp = () => {
         router.push("/signup")
     }
-
+// THIS CREATES THE PAGE SETUP OF THR INITIAL PAGE (index).
     return (
         <View style={styles.container}>
             <View style={styles.input}>  

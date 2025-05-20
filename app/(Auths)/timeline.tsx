@@ -16,7 +16,7 @@ export default function Timeline() {
             await logout_user();
             router.replace("/"); // goes back to index.tsx
         } catch (error) {
-            alert("Logout Failed: " + error.message);
+            alert("Logout Failed: ");
         }
     };
 

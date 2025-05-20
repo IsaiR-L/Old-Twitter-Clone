@@ -10,28 +10,32 @@ export const login_user = async (email: string, password: string) => {
   const user = userCredential.user;
 
   // Ensure user exists in Firestore
-  await saveUserToFirestore(user);
+  //await saveUserToFirestore(user);
 
   return userCredential;
 };
 
 // Sign up user
-export const signUp = async (email: string, password: string) => {
-  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-  const user = userCredential.user;
+export const signUp = async (email: string, password: string, username: string) => {
+  try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
 
-  // Save the user to Firestore after signup
-  await saveUserToFirestore(user);
-
-  return userCredential;
+      await setDoc(doc(db, 'users', user.uid), {
+        uid: user.uid,
+        username: username,
+        email: email,
+      });
+      console.log('User signed up:', userCredential);
+  } catch (error) {
+    console.error('Error signing up:', error);
+  }
 };
 
 //THIS FUNCTION ALLOWS THE LOGOUT FUNCTION TO WORK AND LET'S THE USER GO BACK TO LOGIN PAGE.
 export const logout_user = async () => {
   await signOut(auth);
 };
-
-
 
 
 export const saveUserToFirestore = async (user: User) => {

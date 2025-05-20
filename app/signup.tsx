@@ -3,10 +3,12 @@ import { styles } from "/app/styles/signup_styles"; // Use the same styles as yo
 import React, { useState } from "react";
 import { Link, useRouter } from "expo-router";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { signUp } from '/app/services/authServices';
 
 
 export default function SignUp() {
   const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const router = useRouter();
@@ -17,7 +19,16 @@ export default function SignUp() {
       return;
     }
 
-    const auth = getAuth();
+      try {
+    await signUp(email, password, username); // also saves to Firestore
+    router.push("/"); // or goToHome() if defined
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
+    Alert.alert("Sign Up Failed", errorMessage);
+  }
+};
+
+/*    const auth = getAuth();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       Alert.alert("Success", "Account created successfully!");
@@ -26,7 +37,7 @@ export default function SignUp() {
       Alert.alert("Sign Up Failed", error.message);
     }
   };
-
+*/
   return (
     <View style={styles.container}>
       <View style={styles.input}>
@@ -40,6 +51,12 @@ export default function SignUp() {
           value={email}
           onChangeText={setEmail}
           keyboardType="email-address"
+        />
+        <TextInput 
+          style={styles.textinput} 
+          placeholder="Username" 
+          value={username} 
+          onChangeText={setUsername}
         />
         <TextInput
           style={styles.textinput}
