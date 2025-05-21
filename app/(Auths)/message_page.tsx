@@ -1,12 +1,13 @@
 import { collection, getDocs } from 'firebase/firestore';
 import { auth, db } from '@/firebase';
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import { updateCurrentUser } from 'firebase/auth';
 import Users from './chat/[selectedUserId]';
 
 type FirestoreUser = {
+  username: ReactNode;
   uid: string;
   email: string;
   displayName: string;
@@ -43,12 +44,11 @@ export default function MessagePage() {
       {users.map(user => (
         <TouchableOpacity
           key={user.uid}
-          onPress={() => router.push(`./chat/(${user.uid}`)}
-          style={{ padding: 15, borderBottomWidth: 1, borderColor: '#ccc' }}>
-
-          <Text style={{ fontSize: 18 }}>{user.displayName}</Text>
-          <Text style={{ color: 'gray' }}>{user.email}</Text>
-        </TouchableOpacity>
+          onPress={() => router.push(`/chat/${user.uid}`)}
+          style={{ padding: 15, borderBottomWidth: 1, borderColor: '#ccc' }}
+>
+  <Text style={{ fontSize: 18 }}>{user.username}</Text>
+</TouchableOpacity>
       ))}
     </View>
   );

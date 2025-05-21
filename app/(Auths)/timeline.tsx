@@ -19,27 +19,12 @@ export default function Timeline() {
             alert("Logout Failed: " + error.message);
         }
     };
-
-    const goToMessage = () => {
-        router.push("/message_page");
-    }
-    const goToSearch = () => {
-        router.push("/search_page");
-    }
-    const goToNotification = () => {
-        router.push("/notification_page");
-    }
     
-
-
     return (
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <View style={{ backgroundColor: "white", flex: 1, justifyContent: "center", alignItems: "center" }}>
             <Text>Welcome {profile?.username} to the Timeline!</Text>
             <Pressable onPress={handleLogout} style={{ marginTop: 20, padding: 10, backgroundColor: "#1DA1F2", borderRadius: 5 }}>
                 <Text style={{ color: "white" }}>Logout</Text>
-            </Pressable>
-            <Pressable onPress={goToMessage} style={{ marginTop: 20, padding: 10, backgroundColor: "#1DA1F2", borderRadius: 5 }}>
-                <Text style={{ color: "white" }}>Message</Text>
             </Pressable>
         </View>
     );
